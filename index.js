@@ -454,8 +454,8 @@ const updateBook = function (req, res, bookToUpdate) {
 // Create server
 const server = http.createServer(requestHandler)
 
-server.listen(port, HOST_NAME, () => {
+server.listen(port, () => {
     booksDB = JSON.parse(fs.readFileSync(booksDbPath, 'utf8'));
     usersDB = JSON.parse(fs.readFileSync(usersDbPath, 'utf8'));
-    console.log(`Server is listening on ${HOST_NAME}:${port}`)
+    console.log(`Server is listening on :${port}`)
 })
