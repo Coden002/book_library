@@ -8,7 +8,8 @@ let usersDB = [];
 const booksDbPath = path.join(__dirname, "db", 'books.json');
 let booksDB = [];
 
-const PORT = process.env.PORT || 3000
+const port = process.env.PORT || 3000
+
 const HOST_NAME = 'localhost';
 
 const requestHandler = async function (req, res) {
@@ -456,5 +457,5 @@ const server = http.createServer(requestHandler)
 server.listen(PORT, HOST_NAME, () => {
     booksDB = JSON.parse(fs.readFileSync(booksDbPath, 'utf8'));
     usersDB = JSON.parse(fs.readFileSync(usersDbPath, 'utf8'));
-    console.log(`Server is listening on ${HOST_NAME}:${PORT}`)
+    console.log(`Server is listening on ${HOST_NAME}:${port}`)
 })
